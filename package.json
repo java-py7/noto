@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "NoTo — Note Your Todos (Full-Stack Notes + Todo Management Application)",
+  "workspaces": [
+    "Frontend"
+  ],
   "scripts": {
     "dev": "npm --prefix Frontend run dev",
     "build": "npm --prefix Frontend run build",

@@ -11,7 +11,7 @@ import {
   ChevronRight,
   Feather,
 } from 'lucide-react';
-import LogoutModal from './LogoutModal';
+import LogoutModal from './logoutModal';
 import { useAuthStore } from '../stores/authStore';
 import toast from 'react-hot-toast';
 
