@@ -1,0 +1,212 @@
+/* NoTo Centralized Theme & Vintage Aesthetics */
+
+:root {
+  /* Default Neutral Theme Palette */
+  --theme-bg: #F5F5F4;
+  --theme-surface: #FFFFFF;
+  --theme-surface-subtle: #EFEFEF;
+  --theme-sidebar-bg: #252525;
+  --theme-sidebar-text: #F5F5F4;
+  --theme-sidebar-active: #3B3B3B;
+  --theme-header-bg: #F5F5F4;
+  --theme-header-text: #252525;
+  --theme-text: #252525;
+  --theme-text-muted: #777777;
+  --theme-primary: #252525;
+  --theme-primary-light: #FFFFFF;
+  --theme-deep: #252525;
+  --theme-border: #D5D5D2;
+  --theme-border-strong: #252525;
+  --theme-btn-bg: #252525;
+  --theme-btn-text: #FFFFFF;
+  --theme-btn-shadow: #252525;
+  --theme-btn-secondary-bg: #FFFFFF;
+  --theme-btn-secondary-text: #252525;
+  --theme-input-bg: #FFFFFF;
+  --theme-input-text: #252525;
+  --theme-input-border: #777777;
+  --theme-card-bg: #FFFFFF;
+  --theme-note-base: #FFFFFF;
+  --theme-highlight: #E8E8E6;
+  --theme-pin: #8C2B2B;
+
+  /* Fonts */
+  --font-serif: 'EB Garamond', Georgia, 'Times New Roman', serif;
+  --font-display: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
+  font-family: var(--font-serif);
+  min-height: 100vh;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
+  overflow-x: hidden;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: 0.5px;
+  color: var(--theme-text);
+  margin-top: 0;
+}
+
+/* Vintage Button Styling */
+.vintage-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--theme-btn-bg);
+  color: var(--theme-btn-text);
+  border: 1.5px solid var(--theme-border-strong);
+  box-shadow: 2.5px 2.5px 0px var(--theme-btn-shadow);
+  font-family: var(--font-serif);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  font-size: 0.9rem;
+  padding: 10px 18px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.15s ease-in-out;
+  user-select: none;
+}
+
+.vintage-btn:hover:not(:disabled) {
+  transform: translate(1.5px, 1.5px);
+  box-shadow: 1px 1px 0px var(--theme-btn-shadow);
+  opacity: 0.95;
+}
+
+.vintage-btn:active:not(:disabled) {
+  transform: translate(2.5px, 2.5px);
+  box-shadow: 0px 0px 0px var(--theme-btn-shadow);
+}
+
+.vintage-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.vintage-btn-secondary {
+  background-color: var(--theme-btn-secondary-bg, var(--theme-surface));
+  color: var(--theme-btn-secondary-text, var(--theme-text));
+  border: 1.5px solid var(--theme-border-strong);
+  box-shadow: 2px 2px 0px var(--theme-border-strong);
+}
+
+.vintage-btn-secondary:hover:not(:disabled) {
+  background-color: var(--theme-highlight);
+  border-color: var(--theme-border-strong);
+  box-shadow: 1px 1px 0px var(--theme-border-strong);
+}
+
+.vintage-btn-danger {
+  background-color: #B91C1C;
+  color: #FFFFFF;
+  border-color: #7F1D1D;
+  box-shadow: 2.5px 2.5px 0px #7F1D1D;
+}
+
+/* Vintage Card Container */
+.vintage-card {
+  background-color: var(--theme-surface);
+  color: var(--theme-text);
+  border: 1.5px solid var(--theme-border);
+  border-radius: 4px;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.08);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+/* Vintage Inputs */
+.vintage-input {
+  width: 100%;
+  padding: 10px 14px;
+  background-color: var(--theme-input-bg);
+  border: 1px solid var(--theme-input-border);
+  border-bottom: 2px solid var(--theme-border-strong);
+  color: var(--theme-input-text, var(--theme-text));
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  border-radius: 2px;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.vintage-input:focus {
+  border-color: var(--theme-border-strong);
+  background-color: var(--theme-surface);
+  box-shadow: 0 0 0 2px var(--theme-border);
+}
+
+.vintage-input::placeholder {
+  color: var(--theme-text-muted);
+  font-style: italic;
+  opacity: 0.75;
+}
+
+/* Vintage Tag / Badge */
+.vintage-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  font-size: 0.75rem;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 2px;
+  background-color: var(--theme-highlight);
+  color: var(--theme-text);
+  border: 1px solid var(--theme-border);
+}
+
+/* Vintage Decorative Dividers */
+.vintage-divider {
+  border: 0;
+  height: 1px;
+  background: var(--theme-border);
+  margin: 20px 0;
+}
+
+.vintage-divider-dashed {
+  border: 0;
+  border-bottom: 1.5px dashed var(--theme-border);
+  margin: 20px 0;
+}
+
+/* Scrollbar Vintage Touch */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--theme-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--theme-border);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-text-muted);
+}

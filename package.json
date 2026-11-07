@@ -1,0 +1,13 @@
+{
+  "name": "noto-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NoTo — Note Your Todos (Full-Stack Notes + Todo Management Application)",
+  "scripts": {
+    "dev": "npm --prefix Frontend run dev",
+    "build": "npm --prefix Frontend run build",
+    "preview": "npm --prefix Frontend run preview",
+    "lint": "npm --prefix Frontend run lint"
+  }
+}
+

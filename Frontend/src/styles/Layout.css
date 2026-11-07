@@ -1,0 +1,53 @@
+/* Layout Global Structural Frame Wrapper */
+.layout-wrapper {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f4edd8; /* Global vintage parchment background fallback */
+  overflow-x: hidden;
+}
+
+/* Main content view column layout tracking beside fixed sidebar */
+.layout-main-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 100vh;
+  
+  /* Initial offset padding when sidebar is collapsed (70px) */
+  padding-left: 70px;
+  transition: padding-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
+
+/* Slide viewport container dynamically when sidebar opens up (260px) */
+.layout-wrapper.sidebar-open .layout-main-container {
+  padding-left: 260px;
+}
+
+/* Core Component Dashboard Viewport Panel */
+.layout-content {
+  flex-grow: 1;
+  /* Top padding offsets fixed navbar height (70px) + adds dashboard canvas breathing room */
+  padding: 100px 30px 40px 30px; 
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto; /* Centers your content canvas grid neatly inside massive monitors */
+}
+
+/* MOBILE RESPONSIVE ADAPTATIONS */
+@media (max-width: 768px) {
+  .layout-main-container {
+    padding-left: 0 !important; /* Drops sidebar underlays cleanly to zero frame footprint on mobile */
+  }
+  
+  .layout-content {
+    padding: 90px 15px 20px 15px; /* Compresses padding tightly for modern mobile viewport screens */
+  }
+}
+
+/* VINTAGE DARK MODE BACKGROUND COMPATIBILITY OVERRIDE */
+body.dark .layout-wrapper {
+  background-color: #2b2424; /* Deep charcoal burnt sepia color shift */
+}

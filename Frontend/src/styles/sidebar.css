@@ -1,0 +1,217 @@
+/* Vintage Theme Sidebar Layout */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: #eae0c5;     /* Darker paper accent for depth */
+  color: #3c2f2f;               /* Deep charcoal brown text */
+  font-family: 'Georgia', 'Times New Roman', serif;
+  border-right: 2px solid #8b5a2b; /* Warm leather brown dividing line */
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;           /* Reduced horizontal padding */
+  box-sizing: border-box;
+  z-index: 1000;
+  box-shadow: 4px 0 15px rgba(60, 47, 47, 0.1);
+  
+  /* Smooth transition for modern width changes */
+  width: 260px;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* CLOSED SIDEBAR STATE */
+.sidebar:not(.open) {
+  width: 70px;
+}
+
+/* Toggle Menu Alignment (Hamburger icon area) */
+.topMenu {
+  cursor: pointer;
+  font-size: 1.3rem;
+  color: #8b5a2b;
+  padding: 10px;
+  align-self: center; 
+  transition: color 0.2s ease;
+}
+
+.topMenu:hover {
+  color: #3c2f2f;
+}
+
+/* FIX: Completely hide the hamburger bars icon when the sidebar is open */
+.sidebar.open .topMenu {
+  display: none;
+}
+
+/* Close action element (Double Arrow Back Button) */
+.closeBtn {
+  background: transparent;
+  border: none;
+  color: #8b5a2b;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 5px;
+  transition: color 0.2s ease;
+}
+
+/* FIX: Removes any extra scale or movement effects on mouse hover */
+.closeBtn:hover {
+  color: #eae0c5;
+}
+
+/* Hide the close arrow completely when sidebar is closed */
+.sidebar:not(.open) .closeBtn {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Profile Badge Container */
+.profileName {
+  margin: 35px 0 30px 0;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #bcaaa4;
+}
+
+.nav-pro-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 5px;
+  justify-content: center;
+}
+
+/* Vintage custom user avatar */
+#navProfileImg {
+  width: 45px; 
+  height: 45px;
+  border-radius: 4px;
+  border: 2px solid #8b5a2b;
+  object-fit: cover;
+  box-shadow: 2px 2px 0px #3c2f2f;
+  flex-shrink: 0;
+}
+
+/* TEXT VISIBILITY HANDLING */
+.sidebar:not(.open) .profileInfo,
+.sidebar:not(.open) .nav a span,
+.sidebar:not(.open) .logout span {
+  display: none;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#userInfo {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #3c2f2f;
+  letter-spacing: 0.5px;
+}
+
+#userEmail {
+  margin: 4px 0 0 0;
+  font-size: 0.8rem;
+  color: #6e5b4f;
+  font-style: italic;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Main Navigation Menu links */
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.nav a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px;
+  color: #6e5b4f;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+  justify-content: flex-start;
+}
+
+/* Center items perfectly inside link blocks when closed */
+.sidebar:not(.open) .nav a {
+  justify-content: center;
+  padding: 12px 0;
+}
+
+.nav a svg {
+  font-size: 1.2rem;
+  color: #8b5a2b;
+  width: 24px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* Vintage active & hover state styles */
+.nav a:hover, 
+.nav a.active {
+  background-color: #f4edd8; 
+  color: #3c2f2f;
+  border-left: 4px solid #8b5a2b;
+}
+
+/* Sticky anchor point at base */
+.bottom-nav {
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px dashed #bcaaa4;
+}
+
+/* Form actions logout container element */
+.logout {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: #8b5a2b;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  justify-content: flex-start;
+}
+
+/* Center logout icon when minimized */
+.sidebar:not(.open) .logout {
+  justify-content: center;
+  padding: 12px 0;
+}
+
+.logout svg {
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.logout:hover {
+  background-color: #3c2f2f;
+  color: #f4edd8;
+  border-radius: 2px;
+}

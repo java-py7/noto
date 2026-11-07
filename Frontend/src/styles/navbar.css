@@ -1,0 +1,196 @@
+/* Vintage Theme Navbar Layout */
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 70px;
+  background-color: #f4edd8;     /* Antique warm paper parchment */
+  color: #3c2f2f;               /* Deep charcoal brown/sepia */
+  font-family: 'Georgia', 'Times New Roman', serif;
+  border-bottom: 2px solid #8b5a2b; /* Warm leather brown dividing line */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  box-sizing: border-box;
+  z-index: 999;
+  box-shadow: 0 4px 15px rgba(60, 47, 47, 0.05);
+
+  /* Dynamic layout shifting depending on sidebar state */
+  left: 70px; /* Width of collapsed sidebar */
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Adjust layout space smoothly if sidebar expands open */
+.header.sidebar-open {
+  left: 260px; /* Width of expanded sidebar */
+}
+
+/* Brand Identity Branding Logo Section */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  /* FIX: Forces the logo to occupy its natural space without pushing other elements away */
+  flex: 1; 
+}
+
+.logo-img {
+  height: 35px;
+  width: auto;
+  border-radius: 4px;
+  border: 1px solid #8b5a2b;
+  box-shadow: 1px 1px 0px #3c2f2f;
+}
+
+.logo h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.logo h2 span {
+  color: #8b5a2b;
+  font-style: italic;
+  text-transform: lowercase;
+}
+
+/* Search input elements container wrapper */
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 400px;
+  transition: all 0.2s ease;
+}
+
+.inputSearch {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #3c2f2f;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.inputSearch::placeholder {
+  color: #a69385;
+  font-style: italic;
+}
+
+/* Add rich focus shadow highlight when searching */
+.searchBar:focus-within {
+  background-color: #fffdf6;
+  border-color: #8b5a2b;
+  box-shadow: 0 2px 8px rgba(139, 90, 43, 0.1);
+}
+
+/* Styled Search Button (Matches Theme Toggle Style) */
+.searchitem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eae0c5;
+  color: #8b5a2b;
+  border: 1px solid #3c2f2f;
+  font-size: 1.1rem;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 2px 2px 0px #3c2f2f; /* Matching retro offset shadow */
+  transition: all 0.2s ease;
+  
+  /* FIX: Locks it tightly to the search bar with minimal gap */
+  margin-left: 10px; 
+}
+
+.searchitem:hover {
+  background-color: #3c2f2f;
+  color: #f4edd8;
+  box-shadow: 0px 0px 0px #3c2f2f;
+  transform: translate(2px, 2px);
+}
+
+/* Interactive Utility Buttons Block */
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  /* FIX: Balances layout with logo side so the search elements sit exactly in the absolute middle */
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.theme-toggle {
+  background-color: #eae0c5;
+  color: #8b5a2b;
+  border: 1px solid #3c2f2f;
+  font-size: 1.1rem;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 2px 2px 0px #3c2f2f; /* Retro offset shadow decoration block */
+  transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background-color: #3c2f2f;
+  color: #f4edd8;
+  box-shadow: 0px 0px 0px #3c2f2f;
+  transform: translate(2px, 2px);
+}
+
+
+/* VINTAGE DARK MODE THEME INVERSION OVERRIDES */
+body.dark .header {
+  background-color: #2b2424;     /* Deep charcoal burnt sepia */
+  color: #f4edd8;
+  border-bottom-color: #eae0c5;
+}
+
+body.dark .searchBar {
+  background-color: #3c2f2f;
+  border-color: #6e5b4f;
+  border-bottom-color: #eae0c5;
+}
+
+body.dark .inputSearch {
+  color: #f4edd8;
+}
+
+body.dark .searchitem {
+  background-color: #3c2f2f;
+  color: #eae0c5;
+  border-color: #f4edd8;
+  box-shadow: 2px 2px 0px #f4edd8;
+}
+
+body.dark .searchitem:hover {
+  background-color: #f4edd8;
+  color: #3c2f2f;
+  box-shadow: 0px 0px 0px #f4edd8;
+}
+
+body.dark .theme-toggle {
+  background-color: #3c2f2f;
+  color: #eae0c5;
+  border-color: #f4edd8;
+  box-shadow: 2px 2px 0px #f4edd8;
+}
+
+body.dark .theme-toggle:hover {
+  background-color: #f4edd8;
+  color: #3c2f2f;
+  box-shadow: 0px 0px 0px #f4edd8;
+}
